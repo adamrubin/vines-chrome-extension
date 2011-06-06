@@ -1,0 +1,70 @@
+<style>
+body {
+	min-width:357px;
+	overflow-x:hidden;
+	background-color:#eee;
+	color:#5A5858;
+}
+textarea.vine-text {
+	border : 1px solid #ccc;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	height : 70px;
+	padding : 5px;
+	font-size : 11px;
+	width : 100%;
+	font-family: Helvetica,Verdana,Arial,sans-serif;
+}
+.information {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-style: italic;
+}
+input.button {
+	color:#FFF;
+	background:#21759B;
+	cursor: pointer;
+	border:1px solid #062C50;
+	font-size:12px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-transform:uppercase;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+.button:hover {
+	background: #19558D;
+	color: #fff;
+}
+a:link, a:visited {
+	color: #2398C9;
+	text-decoration: none;
+	font-weight: bold;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		chrome.tabs.getSelected(null, function(tab) {
+			$("#vine_body").val(tab.url);
+		});
+		
+		$("form").submit(function() {
+			chrome.tabs.getSelected(null, function(tab) {
+			    chrome.tabs.update(tab.id, { selected: true } )
+			});			
+		});
+	});
+	
+	function setTabLocation(new_url) {
+		chrome.tabs.getSelected(null, function(tab) {
+			chrome.tabs.update(tab.id, { url: new_url });
+		});
+	}
+</script>
+<body>
+	<h3 style="margin-bottom: 4px;">Share on the vine!</h3>
+	<div class="information">You can include recipients for this vine right in the message using @[recipient_name].  You can also tag your vines by just including #[tag] in your message.</div>
+	<script src="http://mzinga.mzingaapps.com/widgets/vines.js"></script>
+</body>

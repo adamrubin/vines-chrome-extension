@@ -1,0 +1,18 @@
+{
+	"name": "MZApps: Vines",
+	"version": "1.0",
+	"description": "Send this page to your company's vine feed",
+	"icons": { "16": "vine.png",
+	           "48": "vine.png",
+	          "128": "vine.png" },
+	"browser_action": {
+		"default_icon": "vine.png",
+		"default_title": "Send this page to the Vine",
+		"popup": "popup.html"
+	},
+	"permissions": [
+		"tabs",
+		"http://*.mzingaapps.com/",
+		"http://*.mzapps.com:3000/"
+	]
+}
