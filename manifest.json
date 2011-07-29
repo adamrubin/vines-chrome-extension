@@ -1,6 +1,7 @@
 {
 	"name": "MZApps: Vines",
-	"version": "1.0",
+	"version": "1.1",
+	"update_url": "http://mzinga.mzingaapps.com/extensions/chrome_update.xml",
 	"description": "Send this page to your company's vine feed",
 	"icons": { "16": "vine.png",
 	           "48": "vine.png",
